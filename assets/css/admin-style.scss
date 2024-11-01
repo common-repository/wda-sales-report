@@ -1,0 +1,468 @@
+:root {
+    --input-color : #747474;
+    --primary-bg : #7182ef;
+    --primary-hover : #5263d3;
+    --outline-bg : #fff;
+    --outline-hover-bg : #f5f3ff;
+
+    // border
+    --border-width: 1px;
+    --border-style: solid;
+    // --border-color: #ffffff86;
+    --border-color: #ededed;
+    --border: var(--border-width) var(--border-style) var(--border-color);
+    --border-radius: 4px;
+}
+
+
+
+.wdasr--get-pro {
+    color: #9b94f9;
+    a {
+        color: #9b94f9;
+    }
+}
+
+
+
+/*
+* WP admin menu icon
+*/
+
+#toplevel_page_wdasr-settings {
+    .wp-menu-image img {
+        width: 19px;
+        margin: auto;
+        padding: 0px;
+        border-radius: 3px;
+        margin-top: 5px;
+        border: 2px solid #e1e1e1;
+    }
+    .dashicons-image-filter::before {
+        animation-name: IconSmoothRotation;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes IconSmoothRotation {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+
+/*------ Hidden Class ------*/
+
+.wdasr--hide {
+    display: none;
+}
+
+
+
+/*------ Margins ------*/
+
+.wdasr--margin {
+    &.top {
+        margin-top: 30px;
+    }
+    &.bottom {
+        margin-bottom: 30px;
+    }
+    &.left {
+        margin-left: 30px;
+    }
+    &.right {
+        margin-right: 30px;
+    }
+}
+
+
+
+/*------ Padding ------*/
+
+.wdasr--padding {
+    &.top {
+        padding-top: 30px;
+    }
+    &.bottom {
+        padding-bottom: 30px;
+    }
+    &.left {
+        padding-left: 30px;
+    }
+    &.right {
+        padding-right: 30px;
+    }
+}
+
+
+
+/*------ Flex Box ------*/
+
+.wdasr--flex {
+    display: flex;
+
+    &.horizontal {
+        flex-direction: row;
+    }
+    &.vertical {
+        flex-direction: column;
+    }
+    &.column-gap {
+        column-gap: 10px;
+    }
+    &.row-gap {
+        row-gap: 10px;
+    }
+}
+
+
+.wdasr--section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    // border-bottom: var(--border);
+}
+
+
+.wdasr--button {
+    padding: 7px 12px;
+    font-size: 15px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-bg);
+
+    &.primary {
+        color: var(--outline-bg);
+        background-color: var(--primary-bg);
+
+        &:hover {
+            background-color: var(--primary-hover);
+        }
+    }
+
+    &.outline {
+        color: var(--primary-bg);
+        background-color: var(--outline-bg);
+
+        &:hover {
+            background-color: var(--outline-hover-bg);
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#wdasr--submit {
+    margin-left: 30px;
+}
+
+
+
+/*------ Daily Report ------*/
+
+#wdasr--daily-report {
+    display: flex;
+    font-size: 16px;
+
+    &>li {
+        border-right: 1px solid;
+        
+        &>.name {
+            padding: 0 10px;
+        }
+        
+        &>.total {
+            padding: 0 10px;
+            margin-top: 20px;
+        }
+
+        &:last-child {
+            border-right: 0;
+        }
+    }
+
+    .wdasr--method-list {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid;
+
+        li {
+            border-bottom: 1px solid ;
+            padding: 5px 10px;
+        }
+    }
+}
+
+
+
+/*------- NEW DESIGN -------*/
+
+#wdasr--report-container {
+    padding: 50px;
+    overflow-x: scroll;
+    width: max-content;
+
+    section {
+        margin: 20px 0;
+    
+        :is(input, select) {
+            font-size: 14px;
+            border: 1px solid #d6d6d6;
+            border-radius: 4px;
+            padding: 3px 10px ;
+            color: var(--input-color);
+        }
+    
+        select {
+            text-transform: capitalize;
+        }
+    
+        label {
+            font-size: 15px;
+            color: var(--input-color);
+            font-weight: normal;
+        }
+    
+        input[type="checkbox"] {
+            border: 1px solid #bbbbbb;
+            border-radius: 4px;
+        }
+    
+        input::placeholder {
+            color: #b3b3b3;
+        }
+    }
+}
+
+.wdasr--report_table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 20px;
+    // box-shadow: 0px 0px 6px 0px #7575991f;
+    text-align: left;
+    // width: 100%;
+    font-size: 14px;
+
+    :is( thead, tfoot ) {
+        background-color: #3A434E;
+        color: #fff;
+        text-transform: uppercase;
+
+        th {
+            font-weight: 400;
+            border: 1px solid #3A434E;
+        }
+    }
+
+    .wdasr--child-product {
+        color: #c5c5c5;
+    }
+
+    :is(th, td) {
+        // padding: 23px 50px;
+        padding: 11px 40px;
+        text-wrap: nowrap;
+    }
+
+    .wdasr--table-section-title {
+        text-align: center;
+        text-transform: uppercase;
+        color: #5f6d7e;
+
+        td {
+            padding-top: 25px;
+        }
+    }
+
+    thead {
+        tr {
+            &>th:first-child {
+                border-top-left-radius: var(--border-radius);
+            }
+            &>th:last-child {
+                border-top-right-radius: var(--border-radius);
+            }
+        }
+    }
+
+    tbody {
+        background-color: #fff;
+        color: #959595;
+
+        // td {
+        //     border-right: 1px solid #dfdfdf;
+        // }
+
+        tr {
+            // border-bottom: 1px solid #dfdfdf;
+
+            td {
+                border: var(--border);
+            }
+
+            // &:nth-child( even ) {
+            //     :is( td, th ) {
+            //         background-color: #f1f1f19e;
+            //     }
+            // }
+            &:hover :is( td, th ) {
+                background-color: #d7d7d7;
+                color: #737373;
+                cursor: pointer;
+            }
+        }
+    }
+
+    tfoot {
+        tr {
+            &>th:first-child {
+                border-bottom-left-radius: var(--border-radius);
+            }
+            &>th:last-child {
+                border-bottom-right-radius: var(--border-radius);
+            }
+        }
+    }
+}
+
+
+
+/*------ Filter Form ------*/
+
+#wdasr--report-options {
+    width: fit-content;
+    text-wrap: nowrap;
+
+    &>span {
+        margin-right: 20px;
+    }
+}
+
+.wdasr--filter {
+    align-items: center;
+    // background-color: #dde0f3;
+    column-gap: 5px;
+    padding: 10px;
+    width: fit-content;
+
+    &.primary-filter {
+        background-color: #f2f2ff;
+    }
+
+    &:has(.wdasr--remove-filter:hover) {
+        background-color: #ffdce1;
+        // background-color: #f3dde0;
+    } 
+
+    input[type="radio"] {
+        border-radius: 4px;
+        transform: scale(1.2);
+    }
+
+    .filter-property {
+        width: 150px;
+    }
+
+    .filter-value {
+        width: 250px;
+    }
+}
+
+#wdasr--new-filter {
+    width: 100%;
+
+    .dashicons {
+        font-size: 18px;
+    }
+}
+
+.wdasr--remove-filter {
+    color: #505050;
+    border: 0;
+    background-color: transparent;
+    // margin-top: -4px;
+
+    &:hover {
+        cursor: pointer;
+        color: #c50606;
+    }
+
+    .dashicons {
+        font-size: 30px;
+        width: auto;
+        height: auto;
+    }
+}
+
+
+
+/*------ Order Status ------*/
+
+.wdasr--order-status {
+    span {
+        text-transform: capitalize;
+        // padding: 8px 10px;
+        padding: 2px 10px;
+        border-radius: 5px;
+        border: 1px solid;
+    }
+    &.on-hold span {
+        color: #e2a411;
+    }
+    &.processing span {
+        color: #04c553;
+    }
+    &.completed span {
+        color: #6db3ee;
+    }
+    &.cancelled span {
+        color: #ba1104;
+    }
+    &.refunded span {
+        color: #b97ddb;
+    }
+    &.pending-payment span {
+        color: #c50484;
+    }
+}
+
+#wdasr--filter-properties {
+    width: fit-content;
+    border-radius: 5px;
+    padding: 20px 30px;
+    background-color: #fff;
+}
+
+#wdasr--display_loading {
+    background-color: #2426ad;
+    height: 10px;
+    border-radius: 20px;
+
+
+    &>div {
+        border-radius: 20px;
+        height: 10px;
+        width: 200px;
+        background: linear-gradient(to right, transparent, #00f7ff, transparent);
+        position: relative;
+        left: 0%;
+
+        animation-name: loadingAnimation;
+        animation-direction: alternate;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes loadingAnimation {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 78%;
+    }
+}
